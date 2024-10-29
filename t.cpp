@@ -69,7 +69,7 @@ main()
 		moveEnemy2();
 		pickcoins();//player picks the coin
 
-		Sleep(300);
+		Sleep(200);
 	}
 
 }
@@ -84,9 +84,6 @@ void eraseplayer()
 	cout<<"        "<<endl;
 	gotoxy(px,py+3);
 	cout<<"        "<<endl;
-
-
-
 }
 
 void printplayer()
@@ -103,7 +100,7 @@ void printplayer()
 
 void moveplayerLeft()
 {
-   if(px>1)
+   if(px>2)
    {
 	eraseplayer();
 	px=px-1;
@@ -113,7 +110,7 @@ void moveplayerLeft()
 
 void moveplayerRight()
 {
-   if (px<70)
+   if (px<60 )
    {
 	eraseplayer();
 	px=px+1;
@@ -124,7 +121,7 @@ void moveplayerRight()
 
 void moveplayerUp()
 {
-    if (py > 1)
+    if (py > 1 )
     {
 	eraseplayer();
 	py=py-1;
@@ -134,7 +131,7 @@ void moveplayerUp()
 
 void moveplayerDown()
 {
-    if (py < 20)
+    if (py < 18)
     {
 	eraseplayer();
 	py=py+1;
@@ -145,7 +142,6 @@ void moveplayerDown()
 
 void printEnemy1()
 {
-	
 	gotoxy(ex,ey);
          cout<<"  ____  "<<endl;
 	gotoxy(ex,ey+1);
@@ -172,7 +168,6 @@ void eraseEnemy1()
 
 void moveEnemy1()
 {
-	
 	eraseEnemy1();
 	ex += d1;
 		
@@ -183,8 +178,6 @@ void moveEnemy1()
 	}
 	
 	printEnemy1();
-
-
 }
 
 void eraseEnemy()
@@ -195,7 +188,6 @@ void eraseEnemy()
         cout<<"      "<<endl;
 	gotoxy(ex1,ey1+2);
         cout<<"      "<<endl;
-
 }
 
 void printEnemy()
@@ -222,7 +214,6 @@ void moveEnemy()
 	
 	printEnemy();
 
-
 }
 
 void eraseEnemy2()
@@ -235,8 +226,6 @@ void eraseEnemy2()
         cout<<"         "<<endl;
 	gotoxy(ex2,ey2+3);
 	cout<<"         "<<endl;
-
-
 }
 
 void printEnemy2()
@@ -268,15 +257,12 @@ void moveEnemy2()
 
 	
 	printEnemy2();
-
-
 }
 void printCoin()
 {
     gotoxy(cx, cy);
     cout<<"o";
 }
-
 
 void eraseCoin()
 {
@@ -292,8 +278,12 @@ void pickcoins()
 	 score += 10; 
 	 cx += 10;
 	 cy += 5;
-	 if (cx > 70) cx=10;
-	 if (cy > 20) cy=5;
+	 if (cx > 60) {
+		cx=10;
+	  }
+	 if (cy > 20){
+		 cy=5;
+	  }
 	 printCoin();
        	 
         }
